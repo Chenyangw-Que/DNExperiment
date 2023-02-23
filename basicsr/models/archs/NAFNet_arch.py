@@ -28,8 +28,8 @@ class SimpleGate(nn.Module):
         return x1 * x2
 
 class middle_block(nn.Module):
-    def __int__(self, chan):
-        super().__int__()
+    def __init__(self, chan):
+        super().__init__()
         self.up = nn.Sequential(
             nn.Conv2d(chan, chan * 2, 1, bias=False),
             nn.PixelShuffle(2)
