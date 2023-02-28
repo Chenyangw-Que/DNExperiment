@@ -44,7 +44,7 @@ datasets:
 
 
 network_g:
-  type: NAFNet
+  type: MINAFv4
   width: 32
   enc_blk_nums: [2, 2, 4, 8]
   middle_blk_num: 12
