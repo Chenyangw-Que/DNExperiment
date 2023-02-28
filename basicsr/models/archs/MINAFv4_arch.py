@@ -111,7 +111,7 @@ class SKFF(nn.Module):
         self.softmax = nn.Softmax(dim=1)
 
     def forward(self, inp_feats):
-        print(inp_feats.shape)
+        #print(inp_feats.shape)
 
         batch_size = inp_feats[0].shape[0]
         n_feats = inp_feats[0].shape[1]
@@ -265,7 +265,7 @@ class MINAFv4(nn.Module):
             x = x + enc_skip
             x = decoder(x)
             decs.append(x)
-
+        decs = decs[::-1]
         #实现decoder之外那部分
         for up,skff in zip(self.upsout,self.skffout):
             y = up(decs[-1])
