@@ -73,6 +73,7 @@ def parse_options(is_train=True):
 
 
 def init_loggers(opt):
+    print(opt)
     log_file = osp.join(opt['path']['log'],
                         f"train_{opt['name']}_{get_time_str()}.log")
     logger = get_root_logger(
@@ -90,7 +91,7 @@ def init_loggers(opt):
     tb_logger = None
     if opt['logger'].get('use_tb_logger') and 'debug' not in opt['name']:
         # tb_logger = init_tb_logger(log_dir=f'./logs/{opt['name']}') #mkdir logs @CLY
-        tb_logger = init_tb_logger(log_dir=osp.join('logs', opt['name']))
+        tb_logger = init_tb_logger(log_dir=osp.join('/content/drive/MyDrive/logs', opt['name']))
     return logger, tb_logger
 
 
